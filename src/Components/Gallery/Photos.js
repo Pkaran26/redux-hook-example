@@ -12,6 +12,7 @@ const Photos = ({ match })=>{
 
   useEffect(()=>{
     dispatch(fetchPhotos(match.id))
+    // eslint-disable-next-line
   }, [match])
 
   useEffect(()=>{

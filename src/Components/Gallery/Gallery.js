@@ -9,6 +9,7 @@ const Gallery = ()=>{
 
   useEffect(()=>{
     dispatch(fetchAlbum())
+    // eslint-disable-next-line
   }, [])
 
   return (
