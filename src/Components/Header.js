@@ -16,6 +16,9 @@ const Header = ()=>(
         <li className="nav-item">
           <NavLink className="nav-link" to="/gallery">Gallery</NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/blog">Blog</NavLink>
+        </li>
       </ul>
     </div>
   </nav>

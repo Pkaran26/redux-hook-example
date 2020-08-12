@@ -5,6 +5,7 @@ import Header from './Components/Header'
 import Display from './Components/Display'
 import Gallery from './Components/Gallery/Gallery'
 import Photos from './Components/Gallery/Photos'
+import Blog from './Components/Tables/Blog'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" component={ (props)=> <Display {...props} /> } exact/>
           <Route path="/gallery" component={ (props)=> <Gallery {...props} /> } exact/>
           <Route path="/gallery/photos/:id" component={ (props)=> <Photos {...props} /> } exact/>
+          <Route path="/blog" component={ (props)=> <Blog {...props} /> } exact/>
         </Switch>
       </div>
     </div>
