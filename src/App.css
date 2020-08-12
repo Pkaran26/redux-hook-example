@@ -1,0 +1,11 @@
+body {
+  font-size: 14px;
+}
+
+table tr td{
+  text-align: center;
+}
+
+.badge {
+  width: 60px;
+}
