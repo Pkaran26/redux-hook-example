@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchPhotos } from '../../Redux/Action/imageAction'
-import { NavLink } from 'react-router-dom'
 import Photo from './Photo'
 
 const Photos = ({ match })=>{
@@ -23,7 +22,7 @@ const Photos = ({ match })=>{
   }, [photos])
 
   return (
-    <div className="container">
+    <div className="">
       { sPhotos.length>0?
         sPhotos.map((e, i)=>(
           <img alt={ e.thumbnailUrl } key={ i } className="thumb" src={ e.thumbnailUrl } onClick={ ()=> setCurrent(e.url) } />

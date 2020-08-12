@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchPost, fetchComment, fetchUser } from '../Redux/Action/postAction'
 import { fetchAlbum, fetchPhotos, fetchTodos } from '../Redux/Action/imageAction'
 
 const Display = ()=>{
-  const [loading, setLoading] = useState(false)
+  // const [loading, setLoading] = useState(false)
 
   const post = useSelector(state => state.post)
   const image = useSelector(state => state.image)
@@ -19,40 +19,38 @@ const Display = ()=>{
   ]
 
   return (
-    <div className="container">
-      <table className="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th>S no.</th>
-            <th>Name</th>
-            <th>Total Count</th>
-            <th>Actions</th>
-            <th>Status</th>
+    <table className="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>S no.</th>
+          <th>Name</th>
+          <th>Total Count</th>
+          <th>Actions</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        { arr.map((e, i)=>(
+          <tr key={ i }>
+            <td>{ i + 1 }.</td>
+            <td>{ e.name }</td>
+            <td>
+              <span className="badge badge-info">{ e.data }</span>
+            </td>
+            <td>
+              <Button { ...e } disabled={ false } />
+            </td>
+            <td>
+              { e.data?
+                <Image alt={ e.name } />
+                :
+                <WrongImage alt={`${ e.name }2`} />
+              }
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          { arr.map((e, i)=>(
-            <tr>
-              <td>{ i + 1 }.</td>
-              <td>{ e.name }</td>
-              <td>
-                <span class="badge badge-info">{ e.data }</span>
-              </td>
-              <td>
-                <Button { ...e } disabled={ loading } />
-              </td>
-              <td>
-                { e.data?
-                  <Image alt={ e.name } />
-                  :
-                  <WrongImage alt={`${ e.name }2`} />
-                }
-              </td>
-            </tr>
-          )) }
-        </tbody>
-      </table>
-    </div>
+        )) }
+      </tbody>
+    </table>
   )
 }
 

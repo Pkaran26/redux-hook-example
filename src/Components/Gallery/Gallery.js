@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAlbum } from '../../Redux/Action/imageAction'
 import { NavLink } from 'react-router-dom'
 
 const Gallery = ()=>{
-  const [loading, setLoading] = useState(false)
-
   const albums = useSelector(state => state.image.albums)
   const dispatch = useDispatch()
 
@@ -14,7 +12,7 @@ const Gallery = ()=>{
   }, [])
 
   return (
-    <div className="container">
+    <div className="">
       { albums.length>0?
         albums.map((e, i)=>(
           <div key={ i } className="card bg-light" style={{ marginBottom: '5px' }}>
