@@ -16,8 +16,9 @@ export const fetchAlbum = ()=> dispatch=>{
   })
 }
 
-export const fetchPhotos = ()=> dispatch=>{
-  axios.get(`${ SERVER_URL }/photos`)
+export const fetchPhotos = (id=null)=> dispatch=>{
+  const url = id? `${ SERVER_URL }/photos?albumId=${ id }` : `${ SERVER_URL }/photos`
+  axios.get(url)
   .then(res=>{
     dispatch({ type: FETCH_PHOTO, payload: res.data })
   })

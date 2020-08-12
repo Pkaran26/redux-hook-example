@@ -1,11 +1,14 @@
-body {
-  font-size: 14px;
+.thumb {
+  cursor: pointer;
 }
 
-table tr td{
+.photo {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
-}
-
-.badge {
-  width: 60px;
+  padding-top: 15px;
 }
