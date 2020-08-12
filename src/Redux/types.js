@@ -1,0 +1,6 @@
+export const FETCH_POST = 'FETCH_POST'
+export const FETCH_COMMENT = 'FETCH_COMMENT'
+export const FETCH_ALBUM = 'FETCH_ALBUM'
+export const FETCH_PHOTO = 'FETCH_PHOTO'
+export const FETCH_TODOS = 'FETCH_TODOS'
+export const FETCH_USERS = 'FETCH_USERS'
